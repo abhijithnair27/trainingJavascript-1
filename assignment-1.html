@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="assignment-1.css">
+    </head>
+    <body>
+        <p class="head">
+            DATE.JS
+        </p>
+        <center>
+            <p class="pdate" id="pdate">
+                <script> 
+                var today = new Date().toLocaleDateString();
+                function changeDate() {
+                    today = document.getElementById('datt').value
+                    document.getElementById("pdate").innerHTML = today.split('-').reverse().join("/");; 
+                }
+                function t() {
+                    document.getElementById("pdate").innerHTML = new Date().toLocaleDateString(); 
+                }
+                document.getElementById("pdate").innerHTML = today; 
+                </script>
+            </p>
+        </center>
+        <p class="ptime">
+            <script> 
+                var today = new Date();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                document.write(time); </script>
+        </p>
+        <form action="get">
+            <center class="center">
+                <input type="button" value="Today's Date" onclick=t()>
+                <input type="date" name="datt" id="datt">
+                <input type="button" value="Set Date" onclick=changeDate()>
+            </center>
+        </form>
+
+    </body>   
+</html>
